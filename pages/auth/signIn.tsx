@@ -167,7 +167,7 @@ export default function Login() {
                   className='text-center text-gray-700 text-sm'
                   sx={{ gridColumn: "span 4" }}
                 >
-                  don't have an account yet?<Link href={'/auth/register'} className='text-gray-700 hover:text-blue-900'><span className='text-transparent'>-</span><b className='text-blue-400'>Sign Up</b></Link>
+                  don't have an account yet?<Link href={'/auth/register'} className='text-gray-700'><span className='text-transparent'>-</span><b className='text-blue-400 hover:text-blue-500'>Sign Up</b></Link>
                 </InputLabel>
               </Box>
             </Form>
