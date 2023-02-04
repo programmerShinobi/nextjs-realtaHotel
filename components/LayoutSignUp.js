@@ -19,16 +19,13 @@ export default function LayoutSignUp({ children }) {
           <div className={styles.bgImg} />
           <div className={styles.cardInCardLogin}>
             <div className={styles.textTitlaInCardLogin1}>
-              <b>Give More</b>
+              <b>Happy Staycation </b>
             </div>
             <div className={styles.textTitlaInCardLogin2}>
-              <b><u>Experience</u></b>
-            </div>
-            <div className={styles.textTitlaInCardLogin3}>
-              <b>With Our Service</b>
+              <b>like <u>Selebrity</u></b>
             </div>
             <div className={styles.textSubtitleInCardLogin}>
-              Hear what our guests have to say about their unforgettable stay at our hotel
+              Experience comfort like never before at our hotel.
             </div>
           </div>
         </div>
