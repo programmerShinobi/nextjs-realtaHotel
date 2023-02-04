@@ -1,0 +1,100 @@
+.bgLayout {
+    background-color: #797979;
+}
+
+.logoLayout {
+    background: url('/assets/logo-realtaHotel.png') no-repeat;
+    background-size: contain;
+    position: fixed;
+    height: 10rem;
+    width: 10rem;
+    left: 3%;
+    top: 5%;
+    overflow: hidden;
+}
+
+.cardLogin {
+    margin: 0 auto;
+    position: fixed;
+    width: 490px;
+    height: auto;
+    left: 4.8rem;
+    top: 134px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 28px;
+
+    @media only screen {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.cardInCardLogin {
+    position: fixed;
+    width: 360px;
+    height: 342px;
+    left: 50px;
+    top: 134px;
+    background: rgba(255, 255, 255, 0.34);
+    backdrop-filter: blur(4px);
+    border-radius: 28px;
+}
+
+.textTitlaInCardLogin {
+    padding-left: 45px;
+    padding-top: 80px;
+    padding-right: 45px;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 45px;
+    color: #131828;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.textSubtitleInCardLogin {
+    padding-top: 5px;
+    padding-left: 45px;
+    padding-bottom: 60px;
+    padding-right: 50px;
+    height: 48px;
+    font-family: 'Poppins';
+    font-style: bold;
+    font-weight: bold;
+    font-size: 9px;
+    line-height: 20px;
+    color: #131828;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.bgImg {
+    background: url('/assets/bg-login.png') no-repeat;
+    position: fixed;
+    left: 900px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    transform: scaleX(1.4);
+    z-index: 0;
+}
+
+.textTitleInCardFormLogin {
+    position: absolute;
+    width: 281px;
+    height: 36px;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 36px;
+    color: #131828;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    transform: translate(-50%, -50%) scaleX(-1.4);
+}
