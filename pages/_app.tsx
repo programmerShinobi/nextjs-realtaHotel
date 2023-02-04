@@ -20,8 +20,6 @@ import Purchasing from "./admin/purchasing";
 import Resto from "./admin/resto";
 import HumanResources from "./admin/humanResources"
 import EditUserPhoto from "./admin/editUserPhoto";
-import Login from "./auth/login";
-import Register from "./auth/register";
 import User from "./users";
 import DashboardAdmin from "./admin";
 import DashboardManager from "./manager";
@@ -29,7 +27,10 @@ import OB from "./ob";
 import HotelOB from "./ob/hotel";
 import PrivateRoute from "../utils/privateRoute";
 import LayoutSignIn from "../components/LayoutSignIn";
+import LayoutSignUp from "../components/LayoutSignUp";
 import SignIn from "./auth/signIn";
+import SignUp from "./auth/signUp";
+
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
@@ -43,17 +44,14 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           </LayoutAuth>
         )}
         {router.pathname === '/auth/login' && (
-          // <LayoutAuth>
-          //   <Login {...pageProps}/>       
-          // </LayoutAuth>
           <LayoutSignIn>
-              <SignIn />
+              <SignIn {...pageProps}/>
           </LayoutSignIn>
         )}
         {router.pathname === '/auth/register' && (
-          <LayoutAuth>
-            <Register {...pageProps}/>       
-          </LayoutAuth>
+          <LayoutSignUp>
+              <SignUp {...pageProps}/>
+          </LayoutSignUp>
         )}
         {router.pathname === '/manager' && (
           <PrivateRoute>

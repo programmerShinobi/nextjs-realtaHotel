@@ -6,15 +6,15 @@ import TextField from '@mui/material/TextField';
 import { Form, Formik } from 'formik';
 import LoginIcon from '@mui/icons-material/Login';
 import { useDispatch, useSelector } from 'react-redux';
-import { doLogin } from '../../Redux/Actions/reduceActions';
+import { doRegister } from '../../Redux/Actions/reduceActions';
 import { useRouter } from 'next/router';
 import usersReducers from '../../Redux/Reducer/usersReducer';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import styles from '../../styles/FormSignIn.module.css'
+import styles from '../../styles/FormSignUp.module.css'
+import { KeyIcon } from '@heroicons/react/24/solid';
 
-export default function SignIn() {
-
+export default function SignUp() {
   // use Router
   const router = useRouter();
   
@@ -23,37 +23,29 @@ export default function SignIn() {
   
   // define useState API POST users
   const [DataUser, setDataUser] = useState({
+    userFullName:null,
     userEmail: null,
-    userPassword: null,
+    uspaPasswordhash: null,
   });
   
   // function handler API POST users
-  const eventHandlerAdd = (data:any) => (event:any) => {
+  const eventHandlerAdd = (data: any) => (event: any) => {
     setDataUser({ ...DataUser, [data]: event.target.value });
   }
   
   // Mengambil state usersReducers dari store redux
-  const isLogin = useSelector((state: any) => state.usersReducers.users);
+  const isRegister = useSelector((state: any) => state.usersReducers.users);
 
   // function handle submit form add new users (API POST users)
   const handleFormSubmit = (values: any, { setSubmitting }: any) => {
-    dispatch(doLogin(values));
+    console.info(isRegister);
+    dispatch(doRegister(values));
 
     // Memeriksa apakah user sudah login
-    if (isLogin.message == 'Login successfully') {
-      localStorage.setItem('token', isLogin.token);
-      console.info(isLogin);
-      if (isLogin.userdata[0].usro_role_id == 1) {        // Guest
-        router.push('/');
-      } else if (isLogin.userdata[0].usro_role_id == 2) { // Manager
-        router.push('/manager');
-      } else if (isLogin.userdata[0].usro_role_id == 3) { // Office Boy
-        router.push('/ob');
-      } else if (isLogin.userdata[0].usro_role_id == 4) { // Admin
-        router.push('/admin');
-      } else if (isLogin.userdata[0].usro_role_id == 5) { // User
-        router.push('/users');
-      }
+    if (isRegister.message == 'Register Successfully') {
+      // mengirim email konfirmasi register
+      // sendEmail(values.userEmail, 'Konfirmasi Register', 'Anda sudah berhasil melakukan register. Terima kasih telah bergabung bersama kami.');
+      router.push('/auth/login');
     }
   };
 
@@ -63,19 +55,23 @@ export default function SignIn() {
       return (touched && errors ? errors : "enter your email");
     } else if(field == "password") {
       return (touched && errors ? errors : "enter your password");
-    }  
+    }  else if(field == "fullname") {
+      return (touched && errors ? errors : "enter your full name");
+    }
   }
 
   // check all validasi required & etc
-  const checkoutSchema:any = yup.object().shape({
+  const checkoutSchema: any = yup.object().shape({
+    userFullName: yup.string().required("required"),
     userEmail: yup.string().email("invalid email").required("required"),
-    userPassword: yup.string().required("required")
+    uspaPasswordhash: yup.string().required("required")
   });
 
   // function initialValue field from table users
   const initialValues: any = {
+    userFullName: "",
     userEmail: "",
-    userPassword: "",
+    uspaPasswordhash: "",
   };
 
   const [showPassword, setShowPassword] = useState(false);
@@ -86,11 +82,11 @@ export default function SignIn() {
   return (
     <Box>
       <Head>
-        <title>Sign In</title>
+        <title>Sign Up</title>
       </Head>
       <section className='w-3/4 mx-auto my-auto flex flex-col gap-3' >
           <Typography className={styles.textTitleInFormLogin}>
-            Sign In to your account
+            Create your account
           </Typography>
         <Formik
           onSubmit={handleFormSubmit}
@@ -116,6 +112,21 @@ export default function SignIn() {
                   fullWidth
                   className="border border-gray-700"
                   variant="filled"
+                  type="text"
+                  label="Full Name"
+                  onBlur={handleBlur}
+                  onChange={(event) => { eventHandlerAdd('userFullName')(event); handleChange(event) }}
+                  value={values.userFullName}
+                  name="userFullName"
+                  error={!!touched.userFullName && !!errors.userFullName}
+                  helperText={getHelperText(touched.userFullName, errors.userFullName, "fullname")}
+                  sx={{ gridColumn: "span 4" }}
+                />
+                <TextField
+                  size="small"
+                  fullWidth
+                  className="border border-gray-700"
+                  variant="filled"
                   type="email"
                   label="Email"
                   onBlur={handleBlur}
@@ -124,7 +135,6 @@ export default function SignIn() {
                   name="userEmail"
                   error={!!touched.userEmail && !!errors.userEmail}
                   helperText={getHelperText(touched.userEmail, errors.userEmail, "email")}
-                  
                   sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
@@ -148,11 +158,11 @@ export default function SignIn() {
                   }}
                   label="Password"
                   onBlur={handleBlur}
-                  onChange={(event) => { eventHandlerAdd('userPassword')(event); handleChange(event) }}
-                  value={values.userPassword}
-                  name="userPassword"
-                  error={!!touched.userPassword && !!errors.userPassword}
-                  helperText={getHelperText(touched.userPassword, errors.userPassword, "password")}
+                  onChange={(event) => { eventHandlerAdd('uspaPasswordhash')(event); handleChange(event) }}
+                  value={values.uspaPasswordhash}
+                  name="uspaPasswordhash"
+                  error={!!touched.uspaPasswordhash && !!errors.uspaPasswordhash}
+                  helperText={getHelperText(touched.uspaPasswordhash, errors.uspaPasswordhash, "password")}
                   sx={{ gridColumn: "span 4" }}
                 />
                 <Button
@@ -161,13 +171,13 @@ export default function SignIn() {
                     className="rounded-md bg-gray-700 text-white hover:bg-gray-400 hover:text-gray-700 border-warning-500 first-line:bg-opacity-20 px-4 text-sm normal-case font-normal  hover:bg-opacity-30 focus:outline-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                     sx={{ gridColumn: "span 4" }}
                   >
-                    <LoginIcon width={5} height={5} /><span className='text-transparent'>-</span>{"Sign In"}
+                    <KeyIcon width={15} height={15} /><span className='text-transparent'>-</span>{"Sign Up"}
                 </Button>
                 <InputLabel
                   className='text-center text-gray-700 text-sm'
                   sx={{ gridColumn: "span 4" }}
                 >
-                  don't have an account yet?<Link href={'/auth/register'} className='text-gray-700'><span className='text-transparent'>-</span><b className='text-blue-400 hover:text-blue-500'>Sign Up</b></Link>
+                  do have an account yet?<Link href={'/auth/login'} className='text-gray-700'><span className='text-transparent'>-</span><b className='text-blue-400 hover:text-blue-500'>Sign In</b></Link>
                 </InputLabel>
               </Box>
             </Form>
