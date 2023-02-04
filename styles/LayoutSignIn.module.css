@@ -16,7 +16,7 @@
 .cardLogin {
     margin: 0 auto;
     position: fixed;
-    width: 490px;
+    width:450px;
     height: auto;
     left: 4.8rem;
     top: 134px;
@@ -31,23 +31,66 @@
 }
 
 .cardInCardLogin {
-    position: fixed;
-    width: 360px;
-    height: 342px;
-    left: 50px;
-    top: 134px;
+    position:fixed;
+    width: 450px;
+    height: auto;
+    right: 4.8rem;
+    top:134px;
     background: rgba(255, 255, 255, 0.34);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
     border-radius: 28px;
+    overflow:hidden;
 }
 
 .textTitlaInCardLogin {
     padding-left: 45px;
-    padding-top: 80px;
+    padding-top: 45px;
     padding-right: 45px;
     font-family: 'Poppins';
     font-weight: 900;
-    font-size: 32px;
+    font-size: 40px;
+    line-height: 45px;
+    color: #131828;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.textTitlaInCardLogin1 {
+    padding-left: 45px;
+    padding-top: 45px;
+    padding-right: 45px;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 45px;
+    color: #131828;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.textTitlaInCardLogin2 {
+    padding-left: 45px;
+    padding-top: 20px;
+    padding-right: 45px;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 45px;
+    color: #131828;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.textTitlaInCardLogin3 {
+    padding-left: 45px;
+    padding-top: 20px;
+    padding-right: 45px;
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 40px;
     line-height: 45px;
     color: #131828;
     flex: none;
@@ -56,15 +99,15 @@
 }
 
 .textSubtitleInCardLogin {
-    padding-top: 5px;
+    margin-top: 20px;
     padding-left: 45px;
-    padding-bottom: 60px;
+    margin-bottom: 45px;
     padding-right: 50px;
     height: 48px;
     font-family: 'Poppins';
     font-style: bold;
     font-weight: bold;
-    font-size: 9px;
+    font-size: 12px;
     line-height: 20px;
     color: #131828;
     flex: none;
