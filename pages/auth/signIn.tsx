@@ -84,96 +84,98 @@ export default function SignIn() {
   };
 
   return (
-    <Box>
-      <Head>
-        <title>Sign In</title>
-      </Head>
-      <section className='w-3/4 mx-auto my-auto flex flex-col gap-3' >
-          <Typography className={styles.textTitleInFormLogin}>
-            Sign In to your account
-          </Typography>
-        <Formik
-          onSubmit={handleFormSubmit}
-          initialValues={initialValues}
-          validationSchema={checkoutSchema}
-        >
-          {({
-            values,
-            errors,
-            touched,
-            handleBlur,
-            handleChange,
-            handleSubmit,
-          }) => (
-            <Form onSubmit={handleSubmit}>
-              <Box
-                display="grid"
-                gap="8px"
-                gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-              >
-                <TextField
-                  size="small"
-                  fullWidth
-                  className="border border-gray-700"
-                  variant="filled"
-                  type="email"
-                  label="Email"
-                  onBlur={handleBlur}
-                  onChange={(event) => {eventHandlerAdd('userEmail')(event); handleChange(event)}}
-                  value={values.userEmail}
-                  name="userEmail"
-                  error={!!touched.userEmail && !!errors.userEmail}
-                  helperText={getHelperText(touched.userEmail, errors.userEmail, "email")}
-                  
-                  sx={{ gridColumn: "span 4" }}
-                />
-                <TextField
-                  size="small"
-                  fullWidth
-                  className="border border-gray-700"
-                  variant="filled"
-                  type={showPassword ? 'text' : 'password'}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={() => setShowPassword(!showPassword)}
-                          onMouseDown={handleMouseDownPassword}
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                  label="Password"
-                  onBlur={handleBlur}
-                  onChange={(event) => { eventHandlerAdd('userPassword')(event); handleChange(event) }}
-                  value={values.userPassword}
-                  name="userPassword"
-                  error={!!touched.userPassword && !!errors.userPassword}
-                  helperText={getHelperText(touched.userPassword, errors.userPassword, "password")}
-                  sx={{ gridColumn: "span 4" }}
-                />
-                <Button
-                    type="submit"
-                    color="warning"
-                    className="rounded-md bg-gray-700 text-white hover:bg-gray-400 hover:text-gray-700 border-warning-500 first-line:bg-opacity-20 px-4 text-sm normal-case font-normal  hover:bg-opacity-30 focus:outline-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+    <>
+      <Box>
+        <Head>
+          <title>Sign In</title>
+        </Head>
+        <section className='w-3/4 mx-auto my-auto flex flex-col gap-3' >
+            <Typography className={styles.textTitleInFormLogin}>
+              Sign In to your account
+            </Typography>
+          <Formik
+            onSubmit={handleFormSubmit}
+            initialValues={initialValues}
+            validationSchema={checkoutSchema}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleBlur,
+              handleChange,
+              handleSubmit,
+            }) => (
+              <Form onSubmit={handleSubmit}>
+                <Box
+                  display="grid"
+                  gap="8px"
+                  gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+                >
+                  <TextField
+                    size="small"
+                    fullWidth
+                    className="border border-gray-700"
+                    variant="filled"
+                    type="email"
+                    label="Email"
+                    onBlur={handleBlur}
+                    onChange={(event) => {eventHandlerAdd('userEmail')(event); handleChange(event)}}
+                    value={values.userEmail}
+                    name="userEmail"
+                    error={!!touched.userEmail && !!errors.userEmail}
+                    helperText={getHelperText(touched.userEmail, errors.userEmail, "email")}
+                    
+                    sx={{ gridColumn: "span 4" }}
+                  />
+                  <TextField
+                    size="small"
+                    fullWidth
+                    className="border border-gray-700"
+                    variant="filled"
+                    type={showPassword ? 'text' : 'password'}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={() => setShowPassword(!showPassword)}
+                            onMouseDown={handleMouseDownPassword}
+                          >
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                    label="Password"
+                    onBlur={handleBlur}
+                    onChange={(event) => { eventHandlerAdd('userPassword')(event); handleChange(event) }}
+                    value={values.userPassword}
+                    name="userPassword"
+                    error={!!touched.userPassword && !!errors.userPassword}
+                    helperText={getHelperText(touched.userPassword, errors.userPassword, "password")}
+                    sx={{ gridColumn: "span 4" }}
+                  />
+                  <Button
+                      type="submit"
+                      color="warning"
+                      className="rounded-md bg-gray-700 text-white hover:bg-gray-400 hover:text-gray-700 border-warning-500 first-line:bg-opacity-20 px-4 text-sm normal-case font-normal  hover:bg-opacity-30 focus:outline-white focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                      sx={{ gridColumn: "span 4" }}
+                    >
+                      <LoginIcon width={5} height={5} /><span className='text-transparent'>-</span>{"Sign In"}
+                  </Button>
+                  <InputLabel
+                    className='text-center text-gray-700 text-sm'
                     sx={{ gridColumn: "span 4" }}
                   >
-                    <LoginIcon width={5} height={5} /><span className='text-transparent'>-</span>{"Sign In"}
-                </Button>
-                <InputLabel
-                  className='text-center text-gray-700 text-sm'
-                  sx={{ gridColumn: "span 4" }}
-                >
-                  don't have an account yet?<Link href={'/auth/register'} className='text-gray-700'><span className='text-transparent'>-</span><b className='text-blue-400 hover:text-blue-500'>Sign Up</b></Link>
-                </InputLabel>
-              </Box>
-            </Form>
-          )}
-        </Formik>
-      </section>
-    </Box>
+                    don't have an account yet?<Link href={'/auth/register'} className='text-gray-700'><span className='text-transparent'>-</span><b className='text-blue-400 hover:text-blue-500'>Sign Up</b></Link>
+                  </InputLabel>
+                </Box>
+              </Form>
+            )}
+          </Formik>
+        </section>
+      </Box>
+    </>
   );
 }
