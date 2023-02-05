@@ -11,10 +11,11 @@ const PrivateRoute: React.FC<Props> = ({ children }) => {
   const [token, setToken] = useState(null);
   useEffect(() => {
     const storedValue: any = localStorage.getItem('token');
+    console.info(storedValue);
     if (!storedValue) {
       setTimeout(() => {
         setToken(null)
-        return router.push('/auth/login');
+        router.push('/auth/login');
       }, 3000);
     } else {
       setToken(storedValue)

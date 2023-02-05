@@ -33,7 +33,7 @@
 .cardInCardLogin {
     position:fixed;
     width: 450px;
-    height: auto;
+    height: 418px;
     right: 5rem;
     top:134px;
     background: rgba(255, 255, 255, 0.34);
@@ -58,7 +58,7 @@
 
 .textTitlaInCardLogin1 {
     padding-left: 45px;
-    padding-top: 45px;
+    padding-top: 135px;
     padding-right: 45px;
     font-family: 'Poppins';
     font-weight: 900;
@@ -116,7 +116,7 @@
 }
 
 .bgImg {
-    background: url('/assets/bg-login.png') no-repeat;
+    background: url('/assets/bg-register.png') no-repeat;
     position: fixed;
     left: 900px;
     top: 0px;
