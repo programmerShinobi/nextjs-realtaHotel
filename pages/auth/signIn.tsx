@@ -20,7 +20,7 @@ export default function SignIn() {
   
   // useDispatch
   const dispatch = useDispatch();
-  
+  dispatch(doLogin());
   // define useState API POST users
   const [DataUser, setDataUser] = useState({
     userEmail: null,
@@ -128,7 +128,6 @@ export default function SignIn() {
                   name="userEmail"
                   error={!!touched.userEmail && !!errors.userEmail}
                   helperText={getHelperText(touched.userEmail, errors.userEmail, "email")}
-                  
                   sx={{ gridColumn: "span 4" }}
                 />
                 <TextField

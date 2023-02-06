@@ -30,8 +30,6 @@ import LayoutSignIn from "../components/LayoutSignIn";
 import LayoutSignUp from "../components/LayoutSignUp";
 import SignIn from "./auth/signIn";
 import SignUp from "./auth/signUp";
-import { Box, FormLabel } from "@mui/material";
-
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
