@@ -142,7 +142,7 @@ export default function TopBar({ showNav, setShowNav }) {
               <div className="p-1">
                 <Menu.Item>
                   <Button
-                    className="flex hover:bg-orange-500 w-full hover:text-white text-gray-700 rounded p-2 text-sm group transition-colors items-center"
+                    className="flex hover:bg-orange-500 w-full hover:text-white text-gray-700 rounded p-2 normal-case font-normal group transition-colors items-center"
                     onClick={handleEditUserPhoto}>
                     <PencilIcon className="h-4 w-4 mr-2 justify-content: flex-start;" />
                     Edit
@@ -150,7 +150,7 @@ export default function TopBar({ showNav, setShowNav }) {
                 </Menu.Item>
                 <Menu.Item>
                   <Button
-                    className="flex hover:bg-orange-500 w-full hover:text-white text-gray-700 rounded p-2 text-sm group transition-colors items-center"
+                    className="flex hover:bg-orange-500 w-full hover:text-white text-gray-700 rounded p-2 normal-case font-normal group transition-colors items-center"
                     onClick={handleLogout}>
                     <LogoutIcon className="h-4 w-4 mr-2 justify-content: flex-start;" />
                     Logout
