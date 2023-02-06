@@ -20,7 +20,10 @@ export default function SignIn() {
   
   // useDispatch
   const dispatch = useDispatch();
-  dispatch(doLogin());
+  useEffect(() => {
+    dispatch(doLogin());
+  }, []);
+
   // define useState API POST users
   const [DataUser, setDataUser] = useState({
     userEmail: null,
