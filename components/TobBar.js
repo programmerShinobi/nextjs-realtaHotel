@@ -139,21 +139,19 @@ export default function TopBar({ showNav, setShowNav }) {
             leaveTo="transform scale-95"
           >
             <Menu.Items className="absolute right-0 w-56 z-50 mt-2 origin-top-right bg-white rounded shadow-sm">
-              <div className="p-1">
+              <div className="p-2">
                 <Menu.Item>
                   <Button
-                    className="flex hover:bg-orange-500 w-full hover:text-white text-gray-700 rounded p-2 normal-case font-normal group transition-colors items-center"
+                    className="flex w-full hover:bg-orange-500 hover:text-white text-gray-700 rounded p-2 normal-case font-normal group transition-colors"
                     onClick={handleEditUserPhoto}>
-                    <PencilIcon className="h-4 w-4 mr-2 justify-content: flex-start;" />
-                    Edit
+                    <PencilIcon className="h-4 w-4 mr-2" /> Edit
                   </Button>
                 </Menu.Item>
                 <Menu.Item>
                   <Button
-                    className="flex hover:bg-orange-500 w-full hover:text-white text-gray-700 rounded p-2 normal-case font-normal group transition-colors items-center"
+                    className="flex w-full hover:bg-orange-500 hover:text-white text-gray-700 rounded p-2 normal-case font-normal group transition-colors"
                     onClick={handleLogout}>
-                    <LogoutIcon className="h-4 w-4 mr-2 justify-content: flex-start;" />
-                    Logout
+                    <LogoutIcon className="h-4 w-4 mr-2" /> Logout
                   </Button>
                 </Menu.Item>
               </div>
