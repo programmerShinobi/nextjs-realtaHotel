@@ -11,7 +11,6 @@ const PrivateRoute: React.FC<Props> = ({ children }) => {
   const [token, setToken] = useState(null);
   useEffect(() => {
     const storedValue: any = localStorage.getItem('token');
-    console.info(storedValue);
     if (!storedValue) {
       setTimeout(() => {
         setToken(null)

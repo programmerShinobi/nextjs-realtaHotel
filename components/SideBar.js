@@ -19,7 +19,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
         <picture>
           <img
             className="w-32 h-auto"
-            src="/assets/logo-shinobi-.png"
+            src="/assets/logo-realtaHotel-white.png"
             alt="logo"
           />
         </picture>
