@@ -792,7 +792,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                             } h-5 w-5 text-orange-500`}
                         />
                         <div>
-                          <p>Hotel</p>
+                          <p>Menus</p>
                         </div>
                       </div>
                     </Link>
@@ -810,7 +810,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                             } h-5 w-5 text-orange-500`}
                         />
                         <div>
-                          <p>Facilities</p>
+                          <p>Menu Photos</p>
                         </div>
                       </div>
                     </Link>
@@ -828,7 +828,25 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                             } h-5 w-5 text-orange-500`}
                         />
                         <div>
-                          <p>Reviews</p>
+                          <p>Order Menu</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Order Detail</p>
                         </div>
                       </div>
                     </Link>
