@@ -109,7 +109,79 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                   <Disclosure.Panel className="pt-2 w-full">
                     <Link href="/admin/master">
                       <div
-                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/master"
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/master"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Members</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Regions</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Country</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Provinces</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
                           ? "bg-orange-100 text-orange-500"
                           : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
                           }`}
@@ -138,6 +210,60 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                         />
                         <div>
                           <p>Policy</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Category Group</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Price Items</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Service Task</p>
                         </div>
                       </div>
                     </Link>
