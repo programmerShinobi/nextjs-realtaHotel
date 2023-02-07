@@ -18,12 +18,12 @@ const SideBar = forwardRef(({ showNav }, ref) => {
   const router = useRouter();
 
   return (
-    <div ref={ref} className="fixed w-56 bg-gray-700 shadow-sm h-full overflow-y-auto">
-      <div className="flex justify-center mt-6 mb-14">
+    <div ref={ref} className="fixed w-56 bg-white shadow-sm h-full overflow-y-auto">
+      <div className="flex justify-center mt-6 mb-5">
         <picture>
           <img
             className="w-40 h-auto"
-            src="/assets/logo-realtaHotel-white.png"
+            src="/assets/logo-realtaHotel.png"
             alt="logo"
           />
         </picture>
@@ -758,23 +758,6 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </Disclosure>
           </div>
         </div>
-
-        {/* <Link href="/admin/purchasing">
-          <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/purchasing"
-              ? "bg-orange-100 text-orange-500"
-              : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
-              }`}
-          >
-            <div className="mr-2">
-              <ShoppingCartIcon className="h-5 w-5" />
-            </div>
-            <div>
-              <p>Purchase</p>
-            </div>
-          </div>
-        </Link> */}
-
       </div>
     </div>
   );
