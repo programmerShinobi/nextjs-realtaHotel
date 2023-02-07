@@ -74,7 +74,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </div>
           </div>
         </Link>
-        <div className="w-full px-4 ">
+        <div className="w-full px-4 mb-3">
           <div className="mx-auto w-full max-w-md rounded-lg bg-white p-2">
             <Disclosure>
               {({ open }) => (
