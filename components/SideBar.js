@@ -29,21 +29,64 @@ const SideBar = forwardRef(({ showNav }, ref) => {
       </div>
 
       <div className="flex flex-col">
-        <Link href="/admin">
-          <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/dashboard"
-              ? "bg-orange-100 text-orange-500"
-              : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
-              }`}
-          >
-            <div className="mr-2">
-              <HomeIcon className="h-5 w-5" />
-            </div>
-            <div>
-              <p>Dashboard</p>
-            </div>
+        <div className="w-full px-4 mb-3">
+          <div className="mx-auto w-full max-w-md rounded-lg bg-white p-1">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                    <div className="mr-2">
+                      <DonutSmallIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p>Dashboard</p>
+                    </div>
+                    <ChevronUpIcon
+                      className={`${open ? 'rotate-180 transform' : ''
+                        } h-5 w-5 text-orange-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="/admin">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>All</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Master</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
           </div>
-        </Link>
+        </div>
         <Link href="/admin/master">
           <div
             className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/master"
@@ -75,7 +118,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
           </div>
         </Link>
         <div className="w-full px-4 mb-3">
-          <div className="mx-auto w-full max-w-md rounded-lg bg-white p-2">
+          <div className="mx-auto w-full max-w-md rounded-lg bg-white p-1">
             <Disclosure>
               {({ open }) => (
                 <>
@@ -105,6 +148,24 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                         />
                         <div>
                           <p>Users</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Roles</p>
                         </div>
                       </div>
                     </Link>
