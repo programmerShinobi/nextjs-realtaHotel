@@ -35,16 +35,16 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                  <Disclosure.Button className="items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
                     <div className="mr-2">
                       <DonutSmallIcon className="h-5 w-5" />
                     </div>
                     <div>
                       <p>Dashboard</p>
                     </div>
-                    <ChevronUpIcon
-                      className={`${open ? 'rotate-180 transform' : ''
-                        } h-5 w-5 text-orange-500`}
+                    <ChevronRightIcon
+                      className={`${open ? 'rotate-90 transform' : ''
+                        } h-4 w-4 text-orange-500`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="pt-2 w-full">
@@ -94,7 +94,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className=" items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                  <Disclosure.Button className="items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
                     <div className="mr-2">
                       <AccountTreeIcon className="h-5 w-5" />
                     </div>
@@ -148,43 +148,27 @@ const SideBar = forwardRef(({ showNav }, ref) => {
           </div>
         </div>
 
-        {/* <Link href="/admin/master">
-          <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/master"
-              ? "bg-orange-100 text-orange-500"
-              : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
-              }`}
-          >
-            <div className="mr-2">
-              <DonutSmallIcon className="h-5 w-5" />
-            </div>
-            <div>
-              <p>Master</p>
-            </div>
-          </div>
-        </Link> */}
-
         <div className="w-full px-4 mb-3">
           <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                  <Disclosure.Button className="items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
                     <div className="mr-2">
-                      <CollectionsBookmarkIcon className="h-5 w-5" />
+                      <Groups3Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <p>Booking</p>
+                      <p>HR</p>
                     </div>
-                    <ChevronUpIcon
-                      className={`${open ? 'rotate-180 transform' : ''
-                        } h-5 w-5 text-orange-500`}
+                    <ChevronRightIcon
+                      className={`${open ? 'rotate-90 transform' : ''
+                        } h-4 w-4 text-orange-500`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="pt-2 w-full">
-                    <Link href="/admin/booking">
+                    <Link href="/admin/humanResources">
                       <div
-                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/booking"
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/humanResources"
                           ? "bg-orange-100 text-orange-500"
                           : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
                           }`}
@@ -194,7 +178,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                             } h-5 w-5 text-orange-500`}
                         />
                         <div>
-                          <p>Booking Order</p>
+                          <p>Human Resources</p>
                         </div>
                       </div>
                     </Link>
@@ -212,7 +196,79 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                             } h-5 w-5 text-orange-500`}
                         />
                         <div>
-                          <p>Special Offers</p>
+                          <p>Employee</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Department</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Shift</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Work Orders</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Job Role</p>
                         </div>
                       </div>
                     </Link>
@@ -228,16 +284,16 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                  <Disclosure.Button className="items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
                     <div className="mr-2">
                       <UsersIcon className="h-5 w-5" />
                     </div>
                     <div>
                       <p>Users</p>
                     </div>
-                    <ChevronUpIcon
-                      className={`${open ? 'rotate-180 transform' : ''
-                        } h-5 w-5 text-orange-500`}
+                    <ChevronRightIcon
+                      className={`${open ? 'rotate-90 transform' : ''
+                        } h-4 w-4 text-orange-500`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="pt-2 w-full">
@@ -282,51 +338,350 @@ const SideBar = forwardRef(({ showNav }, ref) => {
           </div>
         </div>
 
-        <Link href="/admin/hotel">
-          <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/hotel"
-              ? "bg-orange-100 text-orange-500"
-              : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
-              }`}
-          >
-            <div className="mr-2">
-              <LocationCityIcon className="h-5 w-5" />
-            </div>
-            <div>
-              <p>Hotel</p>
-            </div>
+        <div className="w-full px-4 mb-3">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                    <div className="mr-2">
+                      <CollectionsBookmarkIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p>Booking</p>
+                    </div>
+                    <ChevronRightIcon
+                      className={`${open ? 'rotate-90 transform' : ''
+                        } h-4 w-4 text-orange-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="/admin/booking">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/booking"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Booking Order</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Special Offers</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>User Breakfast</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
           </div>
-        </Link>
-        <Link href="/admin/humanResources">
-          <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/humanResources"
-              ? "bg-orange-100 text-orange-500"
-              : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
-              }`}
-          >
-            <div className="mr-2">
-              <Groups3Icon className="h-5 w-5" />
-            </div>
-            <div>
-              <p>HR</p>
-            </div>
+        </div>
+
+        <div className="w-full px-4 mb-3">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                    <div className="mr-2">
+                      <LocationCityIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p>Hotel</p>
+                    </div>
+                    <ChevronRightIcon
+                      className={`${open ? 'rotate-90 transform' : ''
+                        } h-4 w-4 text-orange-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="/admin/hotel">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/hotel"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Hotel</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Facilities</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Reviews</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
           </div>
-        </Link>
-        <Link href="/admin/payment">
-          <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/payment"
-              ? "bg-orange-100 text-orange-500"
-              : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
-              }`}
-          >
-            <div className="mr-2">
-              <PaymentIcon className="h-5 w-5" />
-            </div>
-            <div>
-              <p>Payment</p>
-            </div>
+        </div>
+
+        <div className="w-full px-4 mb-3">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                    <div className="mr-2">
+                      <LocalDiningIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p>Resto</p>
+                    </div>
+                    <ChevronRightIcon
+                      className={`${open ? 'rotate-90 transform' : ''
+                        } h-4 w-4 text-orange-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="/admin/resto">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/resto"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Hotel</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Facilities</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Reviews</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
           </div>
-        </Link>
+        </div>
+
+        <div className="w-full px-4 mb-3">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                    <div className="mr-2">
+                      <PaymentIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p>Payment</p>
+                    </div>
+                    <ChevronRightIcon
+                      className={`${open ? 'rotate-90 transform' : ''
+                        } h-4 w-4 text-orange-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="/admin/payment">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/humanResources"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Transaction</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Gateway</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>User Account</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Bank</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Entity</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+          </div>
+        </div>
+
         <Link href="/admin/purchasing">
           <div
             className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/purchasing"
@@ -339,21 +694,6 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </div>
             <div>
               <p>Purchase</p>
-            </div>
-          </div>
-        </Link>
-        <Link href="/admin/resto">
-          <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/resto"
-              ? "bg-orange-100 text-orange-500"
-              : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
-              }`}
-          >
-            <div className="mr-2">
-              <LocalDiningIcon className="h-5 w-5" />
-            </div>
-            <div>
-              <p>Resto</p>
             </div>
           </div>
         </Link>
