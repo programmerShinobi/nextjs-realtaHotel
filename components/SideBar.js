@@ -448,24 +448,6 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                             } h-5 w-5 text-orange-500`}
                         />
                         <div>
-                          <p>Human Resources</p>
-                        </div>
-                      </div>
-                    </Link>
-                  </Disclosure.Panel>
-                  <Disclosure.Panel className="pt-2 w-full">
-                    <Link href="#">
-                      <div
-                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
-                          ? "bg-orange-100 text-orange-500"
-                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
-                          }`}
-                      >
-                        <ChevronUpIcon
-                          className={`${open ? 'rotate-90 transform' : ''
-                            } h-5 w-5 text-orange-500`}
-                        />
-                        <div>
                           <p>Employee</p>
                         </div>
                       </div>
@@ -695,7 +677,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                       <LocationCityIcon className="h-5 w-5" />
                     </div>
                     <div>
-                      <p>Hotel</p>
+                      <p>Hotels</p>
                     </div>
                     <ChevronRightIcon
                       className={`${open ? 'rotate-90 transform' : ''
@@ -877,7 +859,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                   <Disclosure.Panel className="pt-2 w-full">
                     <Link href="/admin/payment">
                       <div
-                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/humanResources"
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/payment"
                           ? "bg-orange-100 text-orange-500"
                           : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
                           }`}
@@ -990,7 +972,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                   <Disclosure.Panel className="pt-2 w-full">
                     <Link href="/admin/purchasing">
                       <div
-                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/humanResources"
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/purchasing"
                           ? "bg-orange-100 text-orange-500"
                           : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
                           }`}

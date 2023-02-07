@@ -11,17 +11,8 @@ import { Provider } from 'react-redux';
 import store from '../Redux/Store';
 import { useRouter } from "next/router";
 import Index from ".";
-import Hotel from "./admin/hotel";
-import Users from "./admin/users";
-import Booking from "./admin/booking";
-import Master from "./admin/master";
-import Payment from "./admin/payment";
-import Purchasing from "./admin/purchasing";
-import Resto from "./admin/resto";
-import HumanResources from "./admin/humanResources"
 import EditUserPhoto from "./admin/editUserPhoto";
 import User from "./users";
-import DashboardAdmin from "./admin";
 import DashboardManager from "./manager";
 import OB from "./ob";
 import HotelOB from "./ob/hotel";
@@ -30,6 +21,15 @@ import LayoutSignIn from "../components/LayoutSignIn";
 import LayoutSignUp from "../components/LayoutSignUp";
 import SignIn from "./auth/signIn";
 import SignUp from "./auth/signUp";
+import DashboardAll from "./admin/dashboard";
+import MasterMembers from "./admin/master/index";
+import BookingOrder from "./admin/booking/index";
+import UsersUsers from "./admin/users/index";
+import HotelsHotel from "./admin/hotels/index";
+import HREmployee from "./admin/hr/index";
+import PaymentTransaction from "./admin/payment/index";
+import PurchasingPurchaseOrder from "./admin/purchasing/index";
+import RestoMenus from "./admin/resto/index";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
@@ -75,63 +75,63 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           {router.pathname === '/admin' && (
             <PrivateRoute>
               <Layout>
-                <DashboardAdmin {...pageProps}/>       
+                <DashboardAll {...pageProps}/>       
               </Layout>
             </PrivateRoute>
           )}
           {router.pathname === '/admin/master' && (
             <PrivateRoute>
               <Layout>
-                <Master {...pageProps}/>
+                <MasterMembers {...pageProps}/>
               </Layout>
             </PrivateRoute>
           )}
           {router.pathname === '/admin/booking' && (
             <PrivateRoute>
               <Layout>
-                <Booking {...pageProps}/>
+                <BookingOrder {...pageProps}/>
               </Layout>
             </PrivateRoute>
           )}
           {router.pathname === '/admin/users' && (
             <PrivateRoute>
               <Layout>
-                <Users/>
+                <UsersUsers/>
               </Layout>
             </PrivateRoute>
           )}
           {router.pathname === '/admin/hotel' && (
             <PrivateRoute>
               <Layout>
-                <Hotel {...pageProps}/>
+                <HotelsHotel {...pageProps}/>
               </Layout>
             </PrivateRoute>
           )}
           {router.pathname === '/admin/humanResources' && (
             <PrivateRoute>
               <Layout>
-                <HumanResources {...pageProps}/>
+                <HREmployee {...pageProps}/>
               </Layout>
             </PrivateRoute>
           )}
           {router.pathname === '/admin/payment' && (
             <PrivateRoute>
               <Layout>
-                <Payment {...pageProps}/>
+                <PaymentTransaction {...pageProps}/>
               </Layout>
             </PrivateRoute>
           )}
           {router.pathname === '/admin/purchasing' && (
             <PrivateRoute>
               <Layout>
-                <Purchasing {...pageProps}/>
+                <PurchasingPurchaseOrder {...pageProps}/>
               </Layout>
             </PrivateRoute>
           )}
           {router.pathname === '/admin/resto' && (
             <PrivateRoute>
               <Layout>
-                <Resto {...pageProps}/>
+                <RestoMenus {...pageProps}/>
               </Layout>
             </PrivateRoute>
           )}
