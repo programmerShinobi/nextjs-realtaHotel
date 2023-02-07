@@ -21,7 +21,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
       <div className="flex justify-center mt-6 mb-14">
         <picture>
           <img
-            className="w-32 h-auto"
+            className="w-40 h-auto"
             src="/assets/logo-realtaHotel-white.png"
             alt="logo"
           />
@@ -94,7 +94,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                   <Disclosure.Panel className="pt-2 w-full">
                     <Link href="/admin/users">
                       <div
-                        className={`shadow-lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/users"
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/users"
                           ? "bg-orange-100 text-orange-500"
                           : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
                           }`}
