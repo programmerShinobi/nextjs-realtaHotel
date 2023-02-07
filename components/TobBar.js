@@ -147,7 +147,7 @@ export default function TopBar({ showNav, setShowNav }) {
             leaveFrom="transform scale-100"
             leaveTo="transform scale-95"
           >
-            <Menu.Items className="absolute right-0 w-auto z-50 mt-2 origin-top-right bg-white rounded shadow-lg">
+            <Menu.Items className="absolute right-0 w-auto z-50 mt-2 origin-top-right bg-white rounded shadow-2xl">
               <div className="p-1 flex flex-col-left">
                 <Menu.Item>
                   <Button
