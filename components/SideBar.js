@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import Link from "next/link";
 import { HomeIcon, CreditCardIcon, UserIcon, UsersIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import DonutSmallIcon from '@mui/icons-material/DonutSmall';
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
@@ -30,11 +31,11 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
       <div className="flex flex-col">
         <div className="w-full px-4 mb-3">
-          <div className="mx-auto w-full max-w-md rounded-lg bg-white p-1">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                  <Disclosure.Button className="flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
                     <div className="mr-2">
                       <DonutSmallIcon className="h-5 w-5" />
                     </div>
@@ -49,7 +50,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                   <Disclosure.Panel className="pt-2 w-full">
                     <Link href="/admin">
                       <div
-                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin"
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin"
                           ? "bg-orange-100 text-orange-500"
                           : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
                           }`}
@@ -67,7 +68,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                   <Disclosure.Panel className="pt-2 w-full">
                     <Link href="#">
                       <div
-                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
                           ? "bg-orange-100 text-orange-500"
                           : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
                           }`}
@@ -87,7 +88,67 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </Disclosure>
           </div>
         </div>
-        <Link href="/admin/master">
+
+        <div className="w-full px-4 mb-3">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className=" items-center flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                    <div className="mr-2">
+                      <AccountTreeIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p>Master</p>
+                    </div>
+                    <ChevronRightIcon
+                      className={`${open ? 'rotate-90 transform' : ''
+                        } h-4 w-4 text-orange-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="/admin/master">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/master"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Address</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Policy</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+          </div>
+        </div>
+
+        {/* <Link href="/admin/master">
           <div
             className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/master"
               ? "bg-orange-100 text-orange-500"
@@ -101,28 +162,73 @@ const SideBar = forwardRef(({ showNav }, ref) => {
               <p>Master</p>
             </div>
           </div>
-        </Link>
-        <Link href="/admin/booking">
-          <div
-            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/booking"
-              ? "bg-orange-100 text-orange-500"
-              : "text-gray-400 hover:bg-orange-100 hover:text-orange-500"
-              }`}
-          >
-            <div className="mr-2">
-              <CollectionsBookmarkIcon className="h-5 w-5" />
-            </div>
-            <div>
-              <p>Booking</p>
-            </div>
-          </div>
-        </Link>
+        </Link> */}
+
         <div className="w-full px-4 mb-3">
-          <div className="mx-auto w-full max-w-md rounded-lg bg-white p-1">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
             <Disclosure>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full justify-between rounded-lg bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                  <Disclosure.Button className="flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
+                    <div className="mr-2">
+                      <CollectionsBookmarkIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p>Booking</p>
+                    </div>
+                    <ChevronUpIcon
+                      className={`${open ? 'rotate-180 transform' : ''
+                        } h-5 w-5 text-orange-500`}
+                    />
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="/admin/booking">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/booking"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Booking Order</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                  <Disclosure.Panel className="pt-2 w-full">
+                    <Link href="#">
+                      <div
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "#"
+                          ? "bg-orange-100 text-orange-500"
+                          : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
+                          }`}
+                      >
+                        <ChevronUpIcon
+                          className={`${open ? 'rotate-90 transform' : ''
+                            } h-5 w-5 text-orange-500`}
+                        />
+                        <div>
+                          <p>Special Offers</p>
+                        </div>
+                      </div>
+                    </Link>
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+          </div>
+        </div>
+
+        <div className="w-full px-4 mb-3">
+          <div className="mx-auto w-full max-w-md rounded-md bg-white p-1">
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex w-full justify-between rounded-md bg-orange-100 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-200 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75 shadow-lg">
                     <div className="mr-2">
                       <UsersIcon className="h-5 w-5" />
                     </div>
@@ -137,7 +243,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                   <Disclosure.Panel className="pt-2 w-full">
                     <Link href="/admin/users">
                       <div
-                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/users"
+                        className={`shadow-2lg pl-3 px-4 py-2 mx-auto rounded-md text-left text-sm font-medium cursor-pointer flex items-center transition-colors ${router.pathname == "/admin/users"
                           ? "bg-orange-100 text-orange-500"
                           : "text-orange-900 hover:bg-orange-100 hover:text-orange-500"
                           }`}
@@ -175,6 +281,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </Disclosure>
           </div>
         </div>
+
         <Link href="/admin/hotel">
           <div
             className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${router.pathname == "/admin/hotel"
