@@ -11,10 +11,10 @@ import { useRouter } from 'next/router';
 import usersReducers from '../../Redux/Reducer/usersReducer';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import styles from '../../styles/FormSignIn.module.css'
+import styles from '../../styles/FormSignIn.module.css';
 
 export default function SignIn() {
-
+  
   // use Router
   const router = useRouter();
   
@@ -38,7 +38,7 @@ export default function SignIn() {
   // function handle submit form add new users (API POST users)
   const handleFormSubmit = (values: any, { setSubmitting }: any) => {
     dispatch(doLogin(values));
-
+    
     // Memeriksa apakah user sudah login
     if (isLogin.message == 'Login successfully') {
       localStorage.setItem('token', isLogin.token);
